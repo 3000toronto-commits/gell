@@ -2,9 +2,11 @@
   <div class="tax-recon-card">
     <div class="tax-recon-header">
       <div class="tax-recon-kicker">ОПЫТ КОЛЛЕГИ</div>
-<h2 class="tax-recon-title">
-  Две успешных налоговых реконструкции: что сработало безотказно
-</h2>
+
+      <h2 class="tax-recon-title">
+        Две успешных налоговых реконструкции: что сработало безотказно
+      </h2>
+
       <p class="tax-recon-subtitle">
         Переключайтесь между этапами и смотрите, что сработало на практике
       </p>
@@ -61,7 +63,9 @@
           aria-labelledby="tax-recon-tab-1"
         >
           <div class="tax-recon-label">Что сработало</div>
+
           <h3 class="tax-recon-panel-title">Восстановили документы</h3>
+
           <p class="tax-recon-panel-text">
             Не ждите, что перевозчик или субподрядчик сам все пришлет. Мы готовили договоры, акты, заявки за контрагентов и отправляли им на подпись. Посылали курьеров, ездили сами, отправляли почтой. Даже если у контрагента внедрен ЭДО, бумажный оригинал с печатью в суде весит больше.
           </p>
@@ -76,12 +80,15 @@
           hidden
         >
           <div class="tax-recon-label">Что сработало</div>
+
           <h3 class="tax-recon-panel-title">
             Собрали информацию с мест, где происходила передача товара или оказание услуг
           </h3>
+
           <p class="tax-recon-panel-text">
             В кейсе с рабочими на аутсорсинге нам помогли пропускные пункты складов. Мы подняли записи охраны, данные камер, табели. Сделали расчет: сколько поддонов входило в ремонт и сколько выходило. Так мы доказали, что без услуг аутсорсера мы бы не закрыли отгрузки клиентам.
           </p>
+
           <p class="tax-recon-panel-text">
             Теперь при закупках у ИП на упрощенке ввели правило: при поступлении товара обязательно фотографировать машину с грузом и прикладывать снимки к входящим документам. Это практически бесплатно, зато мгновенно подтверждает реальность поставки.
           </p>
@@ -96,12 +103,15 @@
           hidden
         >
           <div class="tax-recon-label">Что сработало</div>
+
           <h3 class="tax-recon-panel-title">
             Разыскали экс-сотрудников и «исчезнувших» контрагентов
           </h3>
+
           <p class="tax-recon-panel-text">
             Многие опускают руки, когда ключевой логист или кладовщик уволился, а контрагент закрылся. Мы находили людей через HR, договаривались о встрече, заверяли письменные пояснения у нотариуса. Переписку в мессенджерах и документы контрагентов не распечатывали целыми кипами, а несли ноутбук нотариусу, и он заверял скриншоты. Это полноценное доказательство.
           </p>
+
           <p class="tax-recon-panel-text">
             Что касается «исчезнувших» контрагентов, то найти их вполне реально. Даже если ИП закрылся, печать и старые записи часто хранят дома. Люди идут навстречу, когда понимают, что у вас проблема.
           </p>
@@ -136,16 +146,16 @@
     margin-bottom: 22px;
   }
 
-.tax-recon-kicker {
-  margin: 0 0 8px;
-  color: #CA4037;
-  font-size: 13px;
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-  
+  .tax-recon-kicker {
+    margin: 0 0 8px;
+    color: #CA4037;
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
   .tax-recon-title {
     margin: 0 0 10px;
     font-size: 28px;
@@ -163,7 +173,7 @@
 
   .tax-recon-layout {
     display: grid;
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 180px minmax(0, 1fr);
     gap: 18px;
     align-items: start;
   }
@@ -185,10 +195,16 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 10px;
     text-align: left;
     font: inherit;
-    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    transition:
+      background 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
   .tax-recon-step:hover {
@@ -313,23 +329,34 @@
     }
 
     .tax-recon-layout {
-      grid-template-columns: 1fr;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 14px;
     }
 
     .tax-recon-tabs {
-      flex-direction: row;
+      flex-direction: column;
       gap: 8px;
     }
 
     .tax-recon-step {
-      justify-content: center;
-      text-align: center;
+      min-height: 48px;
+      padding: 10px;
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .tax-recon-step-text {
+      font-size: 15px;
     }
   }
 
   @media (max-width: 560px) {
     .tax-recon-card {
       padding: 18px;
+    }
+
+    .tax-recon-kicker {
+      font-size: 12px;
     }
 
     .tax-recon-title {
@@ -340,13 +367,26 @@
       font-size: 15px;
     }
 
-    .tax-recon-tabs {
-      flex-direction: column;
+    .tax-recon-layout {
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 10px;
     }
 
     .tax-recon-step {
       min-height: 44px;
-      justify-content: flex-start;
+      padding: 8px;
+      gap: 7px;
+    }
+
+    .tax-recon-step-number {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      font-size: 13px;
+    }
+
+    .tax-recon-step-text {
+      font-size: 14px;
     }
 
     .tax-recon-panel {
@@ -360,6 +400,48 @@
 
     .tax-recon-panel-text {
       font-size: 16px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .tax-recon-card {
+      padding: 14px;
+    }
+
+    .tax-recon-layout {
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 8px;
+    }
+
+    .tax-recon-step {
+      padding: 7px;
+      gap: 6px;
+      border-radius: 12px;
+    }
+
+    .tax-recon-step-number {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      font-size: 12px;
+    }
+
+    .tax-recon-step-text {
+      font-size: 13px;
+    }
+
+    .tax-recon-panel {
+      padding: 14px;
+      border-left-width: 4px;
+    }
+
+    .tax-recon-panel-title {
+      font-size: 18px;
+    }
+
+    .tax-recon-panel-text {
+      font-size: 15px;
+      line-height: 1.55;
     }
   }
 </style>
